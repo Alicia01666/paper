@@ -1,0 +1,34 @@
+{%  extends 'base.html' %}
+
+    <title>{% block title %}Список задач{% endblock %}</title>
+{% block content %}
+<a href="{{ url_for('logout') }}">Logout</a>
+<br>
+<h2>Список задач</h2>
+<br>
+<ul>
+    <li>
+        <a href="{{ url_for('index', sort_by='name') }}">Сортировать по имени</a>
+    </li>
+    <li>
+    <a href="{{ url_for('index', sort_by='category') }}">Сортировать по категории</a>
+    </li>
+    <li>
+    <a href="{{ url_for('index', sort_by='status') }}">Сортировать по статусу</a>
+    </li>
+</ul>
+<br>
+<p>
+    <a href="{{ url_for('add_task') }}">Create task</a>
+</p>
+<br>
+<ul>
+    {% for task in sorted_tasks %}
+        <li>
+            <a href="{{ url_for('task', task_id=task.id) }}">
+            {{ task.name }} - {{ task.category }}   
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

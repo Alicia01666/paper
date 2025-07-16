@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+<head>
+  <title>
+        {% block title %} {{ task.id }} {% endblock %}
+    </title>
+</head>
+
+{% block content %}
+    <h2>задача номер {{ task.id }}</h2>
+    <p><strong>Название:</strong> {{ task.name }}</p>
+    <p><strong>категория:</strong> {{ task.category }}</p>
+    <p><strong>приоритет:</strong> {{ task.priority }}</p>
+    <p><strong>статус:</strong> {{ task.status }}</p>
+
+    <h3>Comments:</h3>
+    <ul>
+        {% for comment in comments %}
+        <li>{{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+        <h3>Add comment</h3>
+
+    <form action="{{ url_for('task', task_id=task.id) }}" method="POST">
+        <input type="text" name="comment" placeholder="тут вы можете добавить комментарий">
+        <button type="submit">Add comment</button>
+    </form>
+    <br>
+    <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST">
+        <button type="submit">Delete task</button>
+    </form>
+    <a href="{{ url_for('edit_task', task_id=task.id) }}">Edit task</a>
+    <br>
+    <a href="{{ url_for('index') }}">Вернуться к списку задач</a>
+{% endblock %}

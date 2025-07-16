@@ -1,0 +1,11 @@
+set TMI_TOKEN=
+set CLIENT_ID=
+set BOT_NICK=
+set BOT_PREFIX=#
+set CHANNEL=
+
+curl.exe --output app/commands.yaml --url https://raw.githubusercontent.com/Codevience/Hyper2374Bot/main/config/commands.yaml
+
+cd app
+
+app.exe

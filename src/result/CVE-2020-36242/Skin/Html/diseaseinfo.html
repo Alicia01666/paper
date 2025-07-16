@@ -1,0 +1,34 @@
+{% extends 'header.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/dinfo.css' %}">
+
+<div class="container-fluid">
+    <div class="row" style="margin-top:5pc;">
+<h2 class="separator">Learn More About Some Diseases</h2>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">      
+        <div class="col-md-6 mt-4 img1">
+            <div class="row">
+                {% for p in photos %}
+                <div class="col-md-6"> 
+                    <img src="{{p.images.url}}" class="" style="height: 15pc; width: 24pc;"/>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-6 mt-5">
+            <h3 style="text-align: center;">{{disease.name}}</h3>
+            <p class="para">{{disease.description}}</p>
+            <h5 style="margin-left: 4pc;"> Symptoms:</h5 >
+            <p class="para"> {{disease.symptoms}}</p>
+        </div>
+        <h5 style="margin-left: 1pc; margin-top: 1pc;"> Causes:</h5 >
+        <p class="para  ml-3 mt-1 mr-3">{{disease.cause}}</p>
+    </div>
+</div>
+{% endblock %}

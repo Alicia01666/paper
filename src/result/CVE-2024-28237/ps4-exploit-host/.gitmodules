@@ -1,0 +1,3 @@
+[submodule "FakeDns"]
+	path = fakedns
+	url = https://github.com/Al-Azif/FakeDns.git

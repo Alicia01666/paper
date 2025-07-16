@@ -1,0 +1,3 @@
+Mean Squared Error: 71307.29226424222
+Trend Analysis: 790.7630662020906
+Forecast: 815.2718438634723

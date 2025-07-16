@@ -1,0 +1,11 @@
+motion:
+    # this is the regex for one whole motion. it can include capturing groups. 
+    # if it does, specify the groups in 'groups' in the order they appear in the regex.
+    regex: 'Motie\s(\d+?):\n\n(.+?)(?=Motie\s\d+?|\Z)'
+    groups:
+        - id
+        - text
+    keys: # keys are extracted either from 'text' if 'groups' is specified, otherwise from the motion captured by the above regex
+        author: # these key names (e.g., author) can be freely chosen
+            regex: 
+                - .+?, Delegierter?
