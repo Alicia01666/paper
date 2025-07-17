@@ -44,7 +44,8 @@ def get_file_func_name(node, module_path_list):
 
 
 def find_chains(graph, start):
-       direct_start = start.split('.')
+
+    direct_start = start.split('.')
     direct_file_name = direct_start[0]
     direct_function_name = direct_start[1]
     for parent, children in graph.items():
@@ -71,14 +72,13 @@ def find_chains(graph, start):
         found_parent = False
         for parent, children in graph.items():
             if node in children:
-
                 dfs(parent, path.copy(), chains, visited.copy())
                 found_parent = True
 
 
         if not found_parent:
             chains.append(list(path))
-    # 存储所有链条
+
     chains = []
     dfs(start, [], chains)
 

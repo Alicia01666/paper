@@ -107,11 +107,3 @@ if __name__ == '__main__':
         with open('chain_index__' + str(test_index) + '_tests_output.txt', 'w', encoding='utf-8') as file:
             file.writelines(tests)
 
-        # for obj in json_data:
-        #     print(f"is_affected: {obj['is_affected']}")
-        #     for param, details in obj['parameters'].items():
-        #         print(f"Parameter: {param}")
-        #         for condition in details['conditions']:
-        #             print(f"  - {condition}")
-
-        #

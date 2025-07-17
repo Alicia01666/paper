@@ -9,10 +9,7 @@ from src.entity import FunctionNode
 llm_model = ChatOpenAI(
     api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-    # model="deepseek-r1-distill-llama-70b"
-    # model="qwen-plus"
     model="deepseek-r1",
-    # model="llama3.3-70B",
 )
 
 system_role = """
