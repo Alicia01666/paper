@@ -9,7 +9,7 @@ We evaluate PyReach on a custom-built dataset, the largest of its kind for Pytho
 PyReach effectively distinguishes between truly affected and unaffected clients by reasoning over code semantics and trigger profiles. 
 Our results highlight the value of combining modular semantic reasoning with constraint propagation for accurate and scalable vulnerability analysis in dynamic languages.
 
-![overview](https://anonymous.4open.science/r/paper-EB98/overview.png)
+<img src="https://anonymous.4open.science/r/paper-EB98/overview.png" alt="overview" width="500">
 
 ##### Usage：
 
